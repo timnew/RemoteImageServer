@@ -1,0 +1,6 @@
+{
+  "extensions": [".jpg", ".png"],
+  "cache": {
+    "exipration": 60000
+  }
+}
