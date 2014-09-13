@@ -1,7 +1,4 @@
-require('coffee-script/register')
-
 require('./initEnv')
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -56,5 +53,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.set('port', process.env.PORT || Config.port);
 
 module.exports = app;

@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+require('../initEnv')
+var debug = Debug('app:discovery');
+var service = require('../discovery');
+
+service.listen(service.defaultPort, function(){
+  debug('Discovery Service listening on port ' + service.address().port);
+});

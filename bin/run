@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+require('../initEnv')
+var service = require('../discovery');
+var app = require('../web');
+
+var server = app.listen(app.get('port'), function() {
+  Debug('app:web')('Image Server listening on port ' + server.address().port);
+
+  service.bind(service.defaultPort, function(){
+    Debug('app:discovery')('Discovery Service listening on port ' + service.address().port);
+  });
+});

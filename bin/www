@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-var debug = require('debug')('app');
-var app = require('../app');
-
-app.set('port', process.env.PORT || 4000);
+require('../initEnv')
+var debug = Debug('app:web');
+var app = require('../web');
 
 var server = app.listen(app.get('port'), function() {
-  debug('Express server listening on port ' + server.address().port);
+  debug('Image Server listening on port ' + server.address().port);
 });

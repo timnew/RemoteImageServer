@@ -1,10 +1,13 @@
 {
   "name": "ImageServer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=app:* node ./bin/www",
-    "dev": "DEBUG=app:* nodemon ./bin/www -w **/*.coffee -w **/*.js"
+    "prod": "ENV=production node ./bin/run",
+    "start": "DEBUG=app:* node ./bin/run",
+    "dev": "DEBUG=app:* nodemon -w . ./bin/run",
+    "www": "DEBUG=app:* nodemon -w . ./bin/www",
+    "discovery": "DEBUG=app:* nodemon -w . ./bin/discovery"
   },
   "dependencies": {
     "approot": "^0.1.0",

@@ -2,5 +2,9 @@
   "extensions": [".jpg", ".png"],
   "cache": {
     "exipration": 60000
+  },
+  "port": 4000,
+  "discovery": {
+    "interval": 5000
   }
 }
