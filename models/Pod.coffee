@@ -54,7 +54,7 @@ class Pod
     ],
     callback
 
-  getImage: (name, callback) =>
+  getImage: (name, callback) ->    
     async.waterfall [
       @ensureCache,
       (files, callback) ->
