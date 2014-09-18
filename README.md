@@ -1,7 +1,7 @@
 RemoteImageServer [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 =================
 
-> RemoteImageServer is the server for [RemoteImagePicker]
+> RemoteImageServer is the server for [RemoteImagePicker]  
 > RemoteImageServer publish your local image files for [RemoteImagePicker] to consume
 
 ## Install
