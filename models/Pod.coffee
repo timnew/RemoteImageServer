@@ -71,7 +71,7 @@ Pod.loadFile = (file) ->
   podsList = podsText.split('\n')
   for podPath in podsList
     podPath = podPath.trim()
-    @addPod(podPath) unless podPath == ''
+    @addPodRecursive(podPath) unless podPath == ''
 
 Pod.getAll = ->
   _.values @podsId
@@ -85,6 +85,17 @@ Pod.addPod = (localPath, name) ->
   @podsId[pod.id] = pod
   debug "Add pod: #{inspect(pod)}"
   pod
+
+Pod.addPodRecursive = (localPath) ->
+  @addPod(localPath)  
+  files = fs.readdirSync(localPath)  
+  for file in files  
+    fullName = pathUtil.join(localPath, file)
+    stats = fs.statSync(fullName)    
+    if stats.isDirectory()      
+      debug "Found pod recursively: %o", fullName
+      @addPodRecursive(fullName)    
+
 
 Pod.removePod = (id) ->
   pod = @get(id)
