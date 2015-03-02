@@ -3,6 +3,6 @@ require('../initEnv')
 var debug = Debug('app:discovery');
 var service = require('../discovery');
 
-service.listen(service.defaultPort, function(){
+service.bind(service.defaultPort, function(){
   debug('Discovery Service listening on port ' + service.address().port);
 });
